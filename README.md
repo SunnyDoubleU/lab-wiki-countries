@@ -1,68 +1,89 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+logo_ironhack_blue 7
+React | WikiCountries
+Introduction
+After spending too much time on GitHub, you found a JSON database of countries and you decide to use it to create your Wikipedia for countries!
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+Requirements
+Fork this repo
+Clone this repo
+Submission
+Upon completion, run the following commands:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+git add .
+git commit -m "done"
+git push origin master
+Create Pull Request so your TAs can check up your work.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Instructions
+React Router installation
+Don't forget to install the React Router:
 
-### `npm test`
+$ npm install react-router-dom
+And setup the router in your src/index.js file:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// src/index.js
 
-### `npm run build`
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+import { BrowserRouter } from "react-router-dom";
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>, 
+    document.getElementById('root')
+);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: http://bit.ly/CRA-PWA
+serviceWorker.unregister();
+Bootstrap installation
+We will use Bootstrap V4 for the design 👍
 
-### `npm run eject`
+$ npm install bootstrap
+// src/index.js
+import 'bootstrap/dist/css/bootstrap.css';
+Instructions
+Iteration 1 | Create the components
+In this iteration, we will focus on general layout. You will create at least 2 components:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+App: For the general layout
+CountryDetail: Your only Route that will show a component that will receive the country code (cca3) in the URL. That is going to represent the id of the country (example: /ESP for Spain, /FRA for France).
+To help you, we gave you an example of a page inside example.html
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As a reminder with Bootstrap:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- Grid: https://getbootstrap.com/docs/4.0/layout/grid/#setting-one-column-width -->
+<div class="row">
+  <div class="col-5">Column 5/12</div>
+  <div class="col-7">Column 7/12</div>
+</div>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- List group: https://getbootstrap.com/docs/4.0/components/list-group/#links-and-buttons -->
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">Cras justo odio (active)</a>
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+</div>
+For Windows users, there is no emoji for the flag. Instead, you can rely on these links:
 
-## Learn More
+France: https://www.countryflags.io/fr/flat/64.png
+Germany: https://www.countryflags.io/de/flat/64.png
+Etc.
+Iteration 2 | Create the entire application
+Everything is in the title. Good luck 😄
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In this case, you should use only 1 <Route /> for CountryDetail.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Your App component should always show the list of countries.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Happy coding! ❤️
