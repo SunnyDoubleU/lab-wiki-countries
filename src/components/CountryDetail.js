@@ -1,12 +1,12 @@
 import React from 'react';
-import countries from '../data/countries.json'
 import { Link } from "react-router-dom";
 
 
 const CountryDetail = (props) => {
 
     var countryDetail = props.match.params.cca3
-    var filteredCountry = countries.filter((country) => country.cca3 === countryDetail)[0]
+    var filteredCountry = props.countries.filter((country) => country.cca3 === countryDetail)[0]
+    debugger
 
     return (
         <div className="listGroup">
@@ -16,7 +16,7 @@ const CountryDetail = (props) => {
             <h4>Borders:</h4>
             <ul>
                 {filteredCountry.borders.map((border) => {
-                    let find = countries.filter((country) => country.cca3 === border)[0]
+                    let find = props.countries.filter((country) => country.cca3 === border)[0]
                     return (
                         < li > <Link to={`/country-detail/${border}`}>{find.name.common}</Link></li>
                     )
